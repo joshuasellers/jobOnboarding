@@ -10,9 +10,9 @@ while True:
     }
 
     try:
-        requests.post("http://api:8080/tracks", json=track)
-        print("sent", track)
+        requests.post("http://localhost:8080/tracks", json=track) # http://localhost:8080 is the same as http://api:8080
+        print("sent", track) # print the track to the console
     except Exception as e:
-        print("error", e)
+        print("error", e) # print the error to the console
 
-    time.sleep(1)
+    time.sleep(1) # sleep for 1 second
