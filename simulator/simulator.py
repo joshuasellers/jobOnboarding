@@ -10,7 +10,7 @@ while True:
     }
 
     try:
-        requests.post("http://localhost:8080/tracks", json=track) # http://localhost:8080 is the same as http://api:8080
+        requests.post("http://api:8080/tracks", json=track) # post the track to the api
         print("sent", track) # print the track to the console
     except Exception as e:
         print("error", e) # print the error to the console
