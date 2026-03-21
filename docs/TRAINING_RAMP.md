@@ -93,8 +93,8 @@ There are no separate sub-repos (`java-api-template/`, etc.) in this project—*
 
 ### Trace the data path
 
-- [ ] Identify where the simulator sets the HTTP **host** (`api` vs `localhost`) and why.
-- [ ] Identify where the browser calls **`localhost:8080`** and why.
+- [x] Identify where the simulator sets the HTTP **host** (`api` vs `localhost`) and why. [see answer in knowledge check]
+- [x] Identify where the browser calls **`localhost:8080`** and why. [see answer in knowledge check]
 - [ ] List the three containers and which **ports** are published to your machine.
 
 ### Hands-on modifications (build “full-stack reflexes”)
