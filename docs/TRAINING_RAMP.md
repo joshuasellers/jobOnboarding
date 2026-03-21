@@ -86,9 +86,9 @@ There are no separate sub-repos (`java-api-template/`, etc.) in this project—*
 
 ### Environment and first run
 
-- [ ] Read [README.md](../README.md) once, then skim [CONCEPTS_AND_TOOLS.md](CONCEPTS_AND_TOOLS.md) (you can return to sections as you go).
-- [ ] Run the full stack: `docker compose up --build` from the repo root.
-- [ ] Confirm simulator logs show posts; browser shows a growing list; `GET /tracks` returns JSON.
+- [x] Read [README.md](../README.md) once, then skim [CONCEPTS_AND_TOOLS.md](CONCEPTS_AND_TOOLS.md) (you can return to sections as you go).
+- [x] Run the full stack: `docker compose up --build` from the repo root.
+- [x] Confirm simulator logs show posts; browser shows a growing list; `GET /tracks` returns JSON.
 - [ ] Run the API **without** Docker (optional but valuable): from [`api/`](../api/), `./gradlew bootRun` (requires Java 17). Point [`simulator.py`](../simulator/simulator.py) at `http://localhost:8080` temporarily *or* run only the UI against localhost (see README for hostname rules).
 
 ### Trace the data path
