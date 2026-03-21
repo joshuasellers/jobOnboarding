@@ -33,6 +33,8 @@ You have three cooperating processes:
 
 **Limitation (demo realism):** Tracks live in an in-memory [`ArrayList`](../api/src/main/java/com/demo/Application.java). No database. Restarting the `api` container wipes data. That keeps the demo small; it is not a production persistence model.
 
+**Planned change (this repo):** Move from list storage to **H2** (embedded, file-based or in-memory mode) so tracks survive API restarts during demos without running a separate database server—still a small step, not a full “production” DB story.
+
 ---
 
 ## Architecture and data flow
@@ -216,6 +218,8 @@ The **server** can include headers (e.g. `Access-Control-Allow-Origin`) telling 
 
 Using `List<Map<String, Object>>` is a **deliberate shortcut**: no JPA, no SQL, no migrations. For demos that is fast; for persistence you would add a database and possibly DTOs instead of raw maps.
 
+**Intended upgrade:** Switch to **H2** with Spring Data JPA (or JDBC) so the API persists tracks across restarts while staying easy to run in Docker (single JAR, no external Postgres/MySQL). That would replace the current in-memory list as the next milestone.
+
 ### Build tooling (Gradle)
 
 The [`api/`](../api/) module uses Gradle with the **Spring Boot plugin** to produce an executable **fat JAR** (`bootJar`) containing dependencies. The **Gradle Wrapper** (`gradlew`) pins a Gradle version so Docker and teammates get consistent builds.
@@ -298,7 +302,8 @@ This stack optimizes for **clarity** and a single-machine demo.
 
 ### Possible next steps (roadmap)
 
-WebSocket or SSE streaming, a map (e.g. Leaflet), alert rules, a Kafka-shaped pipeline, richer charts—all extend the same story: **producer → API → consumers** with clearer “live” or geospatial storytelling.
+- **Persistence:** H2 embedded database (replace `ArrayList` storage) for demo-friendly durability across API restarts.
+- **Elsewhere:** WebSocket or SSE streaming, a map (e.g. Leaflet), alert rules, a Kafka-shaped pipeline, richer charts—all extend the same story: **producer → API → consumers** with clearer “live” or geospatial storytelling.
 
 ---
 

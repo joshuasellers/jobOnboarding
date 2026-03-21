@@ -2,7 +2,7 @@
 
 This repo is a **one-command local demo**: a Python **producer** ([`simulator/`](simulator/)), a Spring Boot **API** ([`api/`](api/)), and a React + Vite **UI** ([`frontend/`](frontend/)). Data flows **simulator → API → browser** (see [Architecture](#architecture-at-a-glance) below).
 
-**Limitation:** tracks are stored **in memory** only ([`Application.java`](api/src/main/java/com/demo/Application.java)). Restarting the `api` container clears them.
+**Limitation:** tracks are stored **in memory** only ([`Application.java`](api/src/main/java/com/demo/Application.java)). Restarting the `api` container clears them. **Planned upgrade:** replace the list with **H2** (embedded DB) for persistence suitable for demos—see [CONCEPTS_AND_TOOLS.md](docs/CONCEPTS_AND_TOOLS.md#in-memory-storage).
 
 ### Docs
 
